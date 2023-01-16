@@ -1,0 +1,50 @@
+import math
+
+def inputdata():
+    n=float(input("Please input n: "))
+    n=validate(n)
+    x=float(input("Please input x: "))
+    y=float(input("Please input y: "))
+    return n,x,y
+
+def solveA(x,n):
+    n=myFactorial(n)
+    A = (pow(x,n))/n
+    return A
+
+def solveB(x,y,n,A):
+    B = 2*A*x+(math.degrees(math.acos(0.235*n)))/(pow(y,3/7))
+    return B
+
+def myFactorial(n):
+    f=1
+    one=1
+    while one != n+1:
+        f=f*one
+        one+=1
+    return f
+
+def show(A,B):
+    print("Value of A: {:.4f}".format(A))
+    print("Value of B: {:.4f}".format(B))
+
+def validate(n):
+    if n<=0:
+        n=float(input("Invalid input. Input n again: "))
+        validate(n)
+    return n
+
+def main():
+    while 1:
+        n,x,y=inputdata()
+        A=solveA(x,n)
+        B=solveB(x,y,n,A)
+        show(A,B)
+        b=input("Program finished.\nType Y if you want to continue, otherwise type any key to exit.\n")
+        b=b.lower()
+        if b =="y":
+            main()
+        else:
+            exit()
+
+main()
