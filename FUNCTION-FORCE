@@ -1,0 +1,62 @@
+import math
+
+def get_values():
+    print("Please input the direction and magnitude: ")
+    mag=int(input("Input magnitude: "))
+    mag=validate_magnitude(mag)
+    dii=int(input("Input direction: "))
+    dii=validate_direction(dii)
+    return mag,dii
+
+def validate_direction(dii):
+    if (dii < 0 or dii > 360):
+        print("Wrong input!")
+        dii=int(input("Input direction again: "))
+        validate_direction(dii)
+        return dii
+    else:
+        return dii
+
+def validate_magnitude(mag):
+    if (mag < 0):
+        print("Wrong input!")
+        dii=int(input("Input magnitude again: "))
+        validate_direction(mag)
+        return mag
+    else:
+        return mag
+    
+def rx(mag1, dir1, mag2, dir2):
+    cos1 = mag1*math.cos(math.radians(dir1))
+    cos2 = mag2*math.cos(math.radians(dir2))
+    X = cos1 + cos2
+    return X
+
+def ry(mag1, dir1, mag2, dir2):
+    sin1 = mag1*math.sin(math.radians(dir1))
+    sin2 = mag2*math.sin(math.radians(dir2))
+    Y = sin1+sin2
+    return Y
+
+def resultant(a,b):
+    res = math.sqrt((math.pow(a, 2)) + (math.pow(b, 2)))
+    return res
+
+def direction_r(a, b):
+    dr = math.degrees(math.atan(abs(a / b)))
+    return dr
+
+def display(x,y):
+        print("Resultant: " + str(round(x, 2)) + " N.")
+        print("Direction of resultant: " + str(round(y, 2)) + " ")
+
+def main():
+    mag1,dir1=get_values()
+    mag2,dir2=get_values()
+    X=rx(mag1,dir1,mag2,dir2)
+    Y=ry(mag1,dir1,mag2,dir2)
+    res=resultant(X,Y)
+    dr=direction_r(X,Y)
+    display(res,dr)
+
+main()
