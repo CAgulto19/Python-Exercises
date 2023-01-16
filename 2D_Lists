@@ -1,0 +1,32 @@
+def get_scores():
+    number = int(input("Enter number of inputs: "))
+    grades = []
+    counter = 0
+    while counter<number:
+        print("Enter Scores for Test: ", counter+1)
+        grades.append(int(input()))
+        counter+=1
+    return grades,number
+
+def compute_total(grades):
+    total=0
+    for a in (grades):
+        total+=a
+    return total
+
+def drop_lowest(grades):
+    x = min(grades)
+    print("Scores: ", grades)
+    print("Lowest score: ", x)
+    return grades
+
+def average(number,total):
+    print("Average of the scores: {0:.2f}".format(total/(number)))
+
+def main():
+    grades,number=get_scores()
+    grades = drop_lowest(grades)
+    total=compute_total(grades)
+    average(number,total)
+
+main()
