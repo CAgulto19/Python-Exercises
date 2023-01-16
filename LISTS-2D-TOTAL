@@ -1,0 +1,57 @@
+import random
+a = 5
+b = 4
+
+def randomizer():
+    table = [[0,0,0,0],
+            [0,0,0,0],
+            [0,0,0,0],
+            [0,0,0,0],
+            [0,0,0,0]]
+    for row in range(a):
+        for col in range(b):
+            table [row][col] = random.randint(10, 20)
+    return table
+
+def row_wise(val):
+    x = [0,0,0,0,0]
+    for col in range(b):
+        for row in range(a):
+            x[col] += val[row][col]
+    return x
+
+def col_wise(val):
+    y = [0,0,0,0,0]
+    for row in range(a):
+        for col in range(b):
+            y[row] += val[row][col]
+    return y
+
+def display(val,x,y):
+    print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+    print("\t\tTable")
+    print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+    print('\t\t\t     Total:')
+    
+    for row in range(a):
+        print(end='\t ')
+        for col in range(b):
+            print(val[row][col], " ", end=' ')
+        print(y[row])
+    print('Total:   ', end='')
+    
+    for col in range(b):
+        print(x[col], " ", end= ' ')
+    total = sum(x)
+    
+    print(total)
+    print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n")
+    print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n")
+
+def main():
+    val = randomizer()
+    x = row_wise(val)
+    y = col_wise(val)
+    display(val,x,y)
+
+main()
