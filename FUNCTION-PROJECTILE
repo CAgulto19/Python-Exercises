@@ -1,0 +1,49 @@
+
+import math
+
+def input_vt():
+        while True:
+            v = float(input("Input velocity: "))
+            while v <= 0:
+                v = float(input("Invalid velocity. Value must be greater than 0: "))
+            o = float(input("Enter angle (0 - 90): "))
+            while o < 0 or o > 90:
+                o = float(input("Invalid angle. Enter from value 0 - 90 : "))
+            return v, math.radians(o)
+
+def input_time():
+    while True:
+        print("Enter time. (Time 2 must be greater than Time 1) : ")
+        t1 = float(input("Input time 1: "))
+        t2 = float(input("Input time 2: "))
+        if t2 < t1:
+            print("Invalid input. T1 must be less than T2.")
+            input_time()
+        return t1, t2
+
+def compute(v, t1, o):
+    x = v*t1*math.cos(o)
+    y = v*t1*math.sin(o)
+    return x,y
+        
+def display(t1,x,y):
+    print("\nTime \t X\t Y")
+    print("{0:.4f}\t{1:.4f}\t{2:.4f}".format(t1,x,y))   
+
+def main():
+    while 1:
+        v,o=input_vt()
+        t1,t2=input_time()
+        while t1 <= t2:
+            x = v*t1*math.cos(o)
+            y = v*t1*math.sin(o)
+            display(t1,x,y)
+            t1+=0.5
+        g = input("\nType [Y] if you wish to continue: ")
+        g = g.lower()
+        if g == 'y':
+            continue
+        else:
+            exit()
+
+main()
