@@ -1,0 +1,18 @@
+counter=0
+rf=[0]*12
+
+while counter<12:
+    print("Enter total rainfall for month", counter+1, ": ")
+    rf[counter]=int(input())#rainfall is stored in rf <3
+    counter+=1
+    
+total = sum(rf)
+minimum = min(rf)
+maximum = max(rf)
+
+print("\nTotal rainfalls this year is :", total)
+print("\nAverage monthly rainfall is :", total/counter )
+indices = [a for a, v in enumerate(rf) if v == minimum]
+print("\nThe month/s with the minimum amount of rainfall: (0=Jan, 1=Feb, and so on)\n", indices)
+ah = [b for b, k in enumerate(rf) if k == maximum]
+print("\nThe month/s with the maximum amount of rainfall: (0=Jan, 1=Feb, and so on)\n", ah)
