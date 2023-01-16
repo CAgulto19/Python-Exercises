@@ -1,0 +1,18 @@
+def inputxy():
+    x = int(input("Input X: "))
+    y = int(input("Input Y: "))
+    return x,y
+
+def compute(x, y):
+    v = 1
+    i = 1
+    while i <=y:
+        v = v * x
+        i +=1
+    return v
+
+def display():
+    z = compute(*inputxy())
+    print("X raised to Y is: " + str(z))
+
+display()
