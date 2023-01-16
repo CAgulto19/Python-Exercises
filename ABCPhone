@@ -1,0 +1,37 @@
+import math
+
+length = float(input("Enter length of call in minutes : "))# this statement must be in line 5
+time = (input("Enter time of call(D - day, N - Night) : "))
+time = time.lower()
+if not(time == 'd' or time == 'n'): 
+       print("Invalid time!")
+       exit();
+calltype = input("Enter type of call(S-same network ; O-other network ; I-international) : ")
+calltype = calltype.lower() 
+if not(calltype=='s'or calltype=='o' or calltype=='i'): 
+       print("Invalid type!")
+       exit();
+if calltype=='s':
+    if time=='d':
+        rate=6.75
+    else:
+        rate=6.25
+elif calltype=='o':
+    if time=='d':  
+        rate=8.75
+    else:
+        rate=7.50
+elif calltype=='i':
+    if time=='d':
+        rate=25.65
+    else:
+        rate=23.30
+if(length > 20 and time =='n'):
+    discount = rate*length*0.10
+    totalcharge = rate*length-discount
+else:
+    totalcharge = rate*length    
+netvat = totalcharge*0.10
+netcharge = totalcharge+netvat   
+print("The total charge is P{0:.2f}".format(totalcharge))
+print("The net charge is P{0:.2f}".format(netcharge))
