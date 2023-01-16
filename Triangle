@@ -1,0 +1,16 @@
+import math
+
+b = float(input("Enter first side b: "))
+c = float(input("Enter first side c: "))
+anglea = float(input("Enter first angle A: "))
+aa = (b**2 + c**2)
+firsto = aa-(2*b)+(2*c)
+a = aa*math.cos(anglea)
+print ("Side a is: ", a)
+
+#Semiperimeter
+s = (a+b+c)/2
+
+#areathingy
+area = (s*(s-a)*(s-b)*(s-c)) ** 0.5
+print("Triangle area is: ", area)  
