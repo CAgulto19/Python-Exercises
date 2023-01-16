@@ -1,0 +1,37 @@
+package = input("Enter package type (A/B): ")
+weight = int(input
+("Enter package weight(must not exceed 20!): "))
+distance = int(input("Enter the distance: "))
+
+if distance >= 500:
+  Ship = distance/500
+else:
+  Ship = 1
+
+if package == 'A' or package == 'a':
+    if weight <= 5: 
+      charge = weight*10.50*Ship
+      Bill = charge + (charge*0.10)
+      print("Your bill is",Bill)
+    if weight <= 10 and weight > 5:
+      charge = weight*15.75*Ship
+      Bill = charge + (charge*0.10)
+      print("Your bill is",Bill)
+    if weight <= 20 and weight > 10:
+      charge = weight*20.65*Ship
+      Bill = charge + (charge*0.10)
+      print("Your bill is",Bill)
+
+if package == 'B' or package == 'b':
+    if weight <= 5:
+      charge = weight*11.75*Ship
+      Bill = charge + (charge*0.10)
+      print("Your bill is",Bill)
+    if weight <= 10 and weight > 5:
+      charge = weight*18.50*Ship
+      Bill = charge + (charge*0.10)
+      print("Your bill is",Bill)
+    if weight <= 20 and weight > 10:
+      charge = weight*23.65*Ship
+      Bill = charge + (charge*0.10)
+      print("Your bill is",Bill)
