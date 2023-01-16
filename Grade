@@ -1,0 +1,25 @@
+Name = input("Please the student's name: ")
+Quiz = int(input("Please enter the number of schoolworks done: "))
+a = 0
+b = 0
+while a < Quiz:
+    score = int(input("Please enter score: "))
+    if score <= 0:
+        print("Invalid score")
+        exit();
+    elif score >= 100:
+        print("Invalid score")
+        exit();
+    else:
+        pass
+    b += score
+    a += 1
+final = b / a
+if final < 60:
+    print("Your Average Grade is ", final,"\nYour  Equivalent Grade is 5.0")
+if final >= 60 and final <= 75:
+    print("Your Average Grade is ", final,"\nYour Equivalent Grade is 3.0")
+if final > 75 and final <= 90:
+    print("Your Average Grade is ", final,"\nYour Equivalent Grade is 2.0")
+if final > 90:
+    print("Your Average Grade is ", final,"\nYour Equivalent Grade is 1.0")
