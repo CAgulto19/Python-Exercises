@@ -1,0 +1,10 @@
+
+FN = input("Enter First Name: ")
+LN = input("Enter Last Name: ")
+print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+print("Name: ", FN.title(), LN.title())
+print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+print("Initials: ",FN[0].title()+'.'+LN[0].title()+'.')
+print("Name in address book: ",FN.title(),LN.upper())
+print("Username: ",FN[0].lower()+LN.lower())
+print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
