@@ -1,0 +1,20 @@
+sum = 0
+counter = 0
+average = 0
+
+while True:
+    
+  try:
+    a = input("Enter an integer value: ")
+    if (a == "done"): 
+     break
+ 
+    value = int(a)
+    sum = value + sum
+    counter = counter + 1
+    average = sum / counter
+    
+  except:
+    print("Invalid input.")
+    
+print ("Sum:", sum, "Average:", average)
