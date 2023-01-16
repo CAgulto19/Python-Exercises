@@ -1,0 +1,30 @@
+
+import math
+question = input("Please type in (A) Harmonic Mean, else type (B) for Geometric mean: ")
+question = question.upper()
+count = 0
+gm = 0
+g = 1
+hm = 0
+h = 1
+if question == 'A' or question == 'B':
+    pass
+else:
+    print("Wrong input")
+    exit();
+if question == 'A': 
+    while h != 0:
+        h = float(input("Enter numbers for Harmonic Mean: "))
+        hm += h
+        count += 1
+    print("you have typed in 0")    
+    th = count / (1/hm)
+    print("Your Harmonic Mean is", round(th,2))
+if question == 'B':
+    while g != 0:
+        g = float(input("Enter numbers for Geometric Mean "))
+        gm += g
+        count += 1
+    print("you have typed in 0")    
+    TotalG = round(math.pow(gm,1/count))
+    print("Your Geometric Mean is", round(TotalG,2))
